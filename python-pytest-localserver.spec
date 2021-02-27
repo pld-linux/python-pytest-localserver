@@ -8,7 +8,7 @@ Summary:	py.test plugin to test server connections locally
 Summary(pl.UTF-8):	Wtyczka py.test do lokalnego testowania połączeń z serwerem
 Name:		python-pytest-localserver
 Version:	0.5.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/pytest-localserver/
