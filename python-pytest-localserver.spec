@@ -7,16 +7,17 @@
 Summary:	py.test plugin to test server connections locally
 Summary(pl.UTF-8):	Wtyczka py.test do lokalnego testowania połączeń z serwerem
 Name:		python-pytest-localserver
-Version:	0.5.0
-Release:	4
+# keep 0.5.x here for python2 support
+Version:	0.5.1.post0
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/pytest-localserver/
 Source0:	https://files.pythonhosted.org/packages/source/p/pytest-localserver/pytest-localserver-%{version}.tar.gz
-# Source0-md5:	431d31cef0ac481f49b3755a3db1996b
+# Source0-md5:	6780e1b7d9aa6938c81ee1d10eef735b
 URL:		https://pypi.org/project/pytest-localserver/
 %if %{with python2}
-BuildRequires:	python-modules >= 1:2.6
+BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-pytest >= 2.0.0
@@ -35,7 +36,7 @@ BuildRequires:	python3-werkzeug >= 0.10
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
-Requires:	python-modules >= 1:2.6
+Requires:	python-modules >= 1:2.7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -102,7 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %files
 %defattr(644,root,root,755)
-%doc LICENSE README
+%doc AUTHORS LICENSE README.rst
 %{py_sitescriptdir}/pytest_localserver
 %{py_sitescriptdir}/pytest_localserver-%{version}-py*.egg-info
 %endif
@@ -110,7 +111,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-pytest-localserver
 %defattr(644,root,root,755)
-%doc LICENSE README
+%doc AUTHORS LICENSE README.rst
 %{py3_sitescriptdir}/pytest_localserver
 %{py3_sitescriptdir}/pytest_localserver-%{version}-py*.egg-info
 %endif
